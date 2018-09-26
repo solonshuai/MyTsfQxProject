@@ -22,14 +22,11 @@ import pub.devrel.easypermissions.EasyPermissions
 class SplashActivity : BaseActivity() {
 
     private var alphaAnimation: AlphaAnimation? = null
-    override fun layoutId(): Int {
-        return R.layout.activity_splash
-    }
-
+    override fun layoutId(): Int = R.layout.activity_splash
     override fun initView() {
         //渐变展示启动屏
         alphaAnimation = AlphaAnimation(0.3f, 1.0f)
-        alphaAnimation?.duration = 3000L
+        alphaAnimation?.duration = 2000
         alphaAnimation?.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationEnd(arg0: Animation) {
                 redirectTo()
@@ -72,7 +69,7 @@ class SplashActivity : BaseActivity() {
             if (perms.isNotEmpty()) {
                 if (perms.contains(Manifest.permission.READ_PHONE_STATE)) {
                     if (alphaAnimation != null) {
-                        layout_splash.startAnimation(alphaAnimation)
+                        iv_web_icon.startAnimation(alphaAnimation)
                     }
                 }
             }

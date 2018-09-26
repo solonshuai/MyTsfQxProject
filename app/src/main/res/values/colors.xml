@@ -8,4 +8,6 @@
     <color name="color_gray">#f0f2f5</color>
     <color name="color_orange">#D85210</color>
     <color name="color_black">#000000</color>
+    <!-- title 半透明背景颜色 -->
+    <color name="color_title_bg">#CCFFFFFF</color>
 </resources>

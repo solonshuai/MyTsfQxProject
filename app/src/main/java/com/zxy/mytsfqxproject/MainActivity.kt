@@ -3,6 +3,7 @@ package com.zxy.mytsfqxproject
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v4.app.FragmentTransaction
+import android.view.KeyEvent
 import com.flyco.tablayout.listener.CustomTabEntity
 import com.flyco.tablayout.listener.OnTabSelectListener
 import com.zxy.mytsfqxproject.View.TabEntity
@@ -15,7 +16,7 @@ import java.util.*
 
 class MainActivity : BaseActivity() {
     private val mTitles = arrayOf("首页", "消息", "我的")
-
+    private var mExitTime: Long = 0
     // 未被选中的图标
     private val mIconUnSelectIds = intArrayOf(R.mipmap.ic_home_normal, R.mipmap.ic_news_normal, R.mipmap.ic_my_normal)
     // 被选中的图标
@@ -76,21 +77,21 @@ class MainActivity : BaseActivity() {
                 transaction.show(it)
             } ?: HomeFragment.getInstance(mTitles[position]).let {
                 mHomeFragment = it
-                transaction.add(R.id.fl_container, it, "home")
+                transaction.add(R.id.fl_container, it, "钛师傅的新门店")
             }
             1
             -> mNewsFragment?.let {
                 transaction.show(it)
             } ?: NewsFragment.getInstance(mTitles[position]).let {
                 mNewsFragment = it
-                transaction.add(R.id.fl_container, it, "discovery")
+                transaction.add(R.id.fl_container, it, "消息")
             }
             2  //热门
             -> mMyFragment?.let {
                 transaction.show(it)
             } ?: MyFragment.getInstance(mTitles[position]).let {
                 mMyFragment = it
-                transaction.add(R.id.fl_container, it, "hot")
+                transaction.add(R.id.fl_container, it, "我的")
             }
         }
 
@@ -123,5 +124,17 @@ class MainActivity : BaseActivity() {
     }
 
     override fun start() {
+    }
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (System.currentTimeMillis().minus(mExitTime) <= 2000) {
+                finish()
+            } else {
+                mExitTime = System.currentTimeMillis()
+                showToast("再按一次退出程序")
+            }
+            return true
+        }
+        return super.onKeyDown(keyCode, event)
     }
 }
