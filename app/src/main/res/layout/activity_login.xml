@@ -55,6 +55,8 @@
                 android:layout_height="match_parent"
                 android:background="@null"
                 android:hint="请输入手机号码"
+                android:inputType="phone"
+                android:maxLength="15"
                 android:paddingLeft="10dp" />
         </LinearLayout>
 
@@ -79,6 +81,7 @@
                 android:layout_height="match_parent"
                 android:background="@null"
                 android:hint="请输入密码"
+                android:maxLength="15"
                 android:paddingLeft="10dp" />
         </LinearLayout>
 

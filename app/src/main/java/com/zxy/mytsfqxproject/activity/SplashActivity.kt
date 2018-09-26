@@ -42,10 +42,10 @@ class SplashActivity : BaseActivity() {
 
     fun redirectTo() {
         if (TextUtils.isEmpty(SPUtil.getData(UrlConstant.token, "").toString())) {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         } else {
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
         finish()

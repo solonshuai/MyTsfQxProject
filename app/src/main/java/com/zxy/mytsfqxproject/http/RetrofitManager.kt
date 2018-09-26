@@ -29,9 +29,10 @@ object RetrofitManager {
         return Interceptor { chain ->
             val originalRequest = chain.request()
             val requestBuilder = originalRequest.newBuilder()
-                    // Provide your custom header here
-                    .header("token", token as String)
                     .method(originalRequest.method(), originalRequest.body())
+            if (token != null && token != "") {
+                requestBuilder.addHeader("token", token as String)
+            }
             val request = requestBuilder.build()
             chain.proceed(request)
         }
