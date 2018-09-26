@@ -25,6 +25,25 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:27.1.1'
     testImplementation 'junit:junit:4.12'
+    implementation 'com.youth.banner:banner:1.4.10'
+    implementation  'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    //分割 Dex 文件
+    implementation 'com.android.support:multidex:1.0.3'
+    //上拉加载刷新
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.4'
+    //OKhttp3
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    // 图片选择
+    implementation 'com.yanzhenjie:album:1.0.7'
+    //空白加载页面
+    implementation 'com.github.solonshuai:Muliple:1.0'
 }
