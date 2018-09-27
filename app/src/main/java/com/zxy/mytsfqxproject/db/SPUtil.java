@@ -82,6 +82,7 @@ public class SPUtil {
             try {
                 edit.putString(keyName, gson.toJson(value));
             } catch (Exception e) {
+                e.printStackTrace();
             }
         } else {
             edit.remove(keyName);

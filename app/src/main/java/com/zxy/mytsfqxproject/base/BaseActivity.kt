@@ -1,5 +1,6 @@
 package com.zxy.mytsfqxproject.base
 
+import android.app.ProgressDialog
 import android.content.Context
 import android.os.Bundle
 import android.support.annotation.NonNull
@@ -18,7 +19,7 @@ abstract class BaseActivity : AppCompatActivity(), EasyPermissions.PermissionCal
      * 多种状态的 View 的切换
      */
     var mLayoutStatusView: MultipleStatusView? = null
-
+    var mProgressDialog: ProgressDialog? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(layoutId())

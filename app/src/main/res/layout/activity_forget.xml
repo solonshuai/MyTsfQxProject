@@ -146,6 +146,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:hint="请输入密码"
+                    android:inputType="textPassword"
                     android:maxLength="15"
                     android:paddingLeft="10dp"
                     android:textColor="@color/color_white" />
@@ -182,6 +183,7 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:hint="请再次输入密码"
+                    android:inputType="textPassword"
                     android:maxLength="15"
                     android:paddingLeft="10dp"
                     android:textColor="@color/color_white" />
