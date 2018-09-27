@@ -56,6 +56,9 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
                         showToast(response.body()!!.errmsg)
                         if (response.body()!!.code == 200) {
                             SPUtil.putData(UrlConstant.token, response.body()!!.result.acctoken)
+                            SPUtil.putData(UrlConstant.userName, response.body()!!.result.username)
+                            SPUtil.putData(UrlConstant.userImg, response.body()!!.result.photo)
+                            SPUtil.putData(UrlConstant.rongCloud, response.body()!!.result.rongCloud)
                             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                             this@LoginActivity.finish()
                         }
