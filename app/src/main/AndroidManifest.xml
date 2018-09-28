@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- 读取手机状态 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -38,6 +40,21 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.SetActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.JDKDActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FWDDActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.GCGLActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.DDJSActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ChooseCustomerActivity"
             android:screenOrientation="portrait" />
     </application>
 

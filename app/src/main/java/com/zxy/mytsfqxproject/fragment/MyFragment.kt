@@ -4,16 +4,16 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.request.RequestOptions
 import com.zxy.mytsfqxproject.R
 import com.zxy.mytsfqxproject.Utils.StatusBarUtil
+import com.zxy.mytsfqxproject.View.GlideCircleTransform
 import com.zxy.mytsfqxproject.activity.SetActivity
 import com.zxy.mytsfqxproject.base.BaseFragment
 import com.zxy.mytsfqxproject.db.SPUtil
 import com.zxy.mytsfqxproject.http.UrlConstant
 import kotlinx.android.synthetic.main.fragment_my.*
 import kotlinx.android.synthetic.main.top_view.*
+
 
 class MyFragment : BaseFragment(), View.OnClickListener {
     private var mTitle: String? = null
@@ -40,10 +40,7 @@ class MyFragment : BaseFragment(), View.OnClickListener {
         layout_help.setOnClickListener(this)
         layout_fankui.setOnClickListener(this)
         layout_share.setOnClickListener(this)
-        val mRequestOptions = RequestOptions.circleCropTransform()
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .skipMemoryCache(true)//不做磁盘缓存
-        Glide.with(this).load(SPUtil.getData(UrlConstant.userImg, "").toString()).apply(mRequestOptions).into(iv_icon)
+        Glide.with(this).load(SPUtil.getData(UrlConstant.userImg, "").toString()).centerCrop().transform(GlideCircleTransform(this.activity)).into(iv_icon)
         tv_username.text = SPUtil.getData(UrlConstant.userName, "").toString()
         //状态栏透明和间距处理
         activity?.let { StatusBarUtil.darkMode(it) }

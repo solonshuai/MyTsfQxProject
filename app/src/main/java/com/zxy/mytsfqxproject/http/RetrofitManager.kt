@@ -21,7 +21,6 @@ object RetrofitManager {
         getRetrofit().create(ApiService::class.java)
     }
 
-    private var token = SPUtil.getData(UrlConstant.token, "")
     /**
      * 设置头
      */
@@ -29,10 +28,8 @@ object RetrofitManager {
         return Interceptor { chain ->
             val originalRequest = chain.request()
             val requestBuilder = originalRequest.newBuilder()
+                    .addHeader("acctoken", SPUtil.getData(UrlConstant.token, "").toString())
                     .method(originalRequest.method(), originalRequest.body())
-            if (token != null && token != "") {
-                requestBuilder.addHeader("token", token as String)
-            }
             val request = requestBuilder.build()
             chain.proceed(request)
         }

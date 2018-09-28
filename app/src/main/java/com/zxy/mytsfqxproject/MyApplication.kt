@@ -23,7 +23,7 @@ class MyApplication : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()
-        context=applicationContext
+        context = applicationContext
         SPUtil.getInstance(this)
     }
 }

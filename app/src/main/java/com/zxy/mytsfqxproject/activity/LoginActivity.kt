@@ -4,22 +4,23 @@ import android.app.ProgressDialog
 import android.content.Intent
 import android.text.TextUtils
 import android.view.View
-import com.google.gson.JsonObject
 import com.zxy.mytsfqxproject.MainActivity
 import com.zxy.mytsfqxproject.R
-import com.zxy.mytsfqxproject.View.LoadingDailog
+import com.zxy.mytsfqxproject.Utils.Tools
 import com.zxy.mytsfqxproject.base.BaseActivity
 import com.zxy.mytsfqxproject.db.SPUtil
 import com.zxy.mytsfqxproject.http.RetrofitManager
 import com.zxy.mytsfqxproject.http.UrlConstant
 import com.zxy.mytsfqxproject.mvp.entity.UserBean
 import kotlinx.android.synthetic.main.activity_login.*
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class LoginActivity : BaseActivity(), View.OnClickListener {
+    private var pamrms = HashMap<String, Any>()
+
     override fun layoutId(): Int {
         return R.layout.activity_login
     }
@@ -45,7 +46,9 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
                 }
                 mProgressDialog!!.setMessage("登录中......")
                 mProgressDialog!!.show()
-                RetrofitManager.service.login(et_name.text.toString(), et_pwd.text.toString()).enqueue(object : Callback<UserBean> {
+                pamrms["phone"] = et_name.text.toString()
+                pamrms["pwd"] = et_pwd.text.toString()
+                RetrofitManager.service.login(Tools.getRequestBody(pamrms)).enqueue(object : Callback<UserBean> {
                     override fun onFailure(call: Call<UserBean>, t: Throwable) {
                         mProgressDialog!!.dismiss()
                         showToast(getString(R.string.http_error))

@@ -4,6 +4,7 @@ import android.text.TextUtils
 import android.view.View
 import com.google.gson.JsonObject
 import com.zxy.mytsfqxproject.R
+import com.zxy.mytsfqxproject.Utils.Tools
 import com.zxy.mytsfqxproject.base.BaseActivity
 import com.zxy.mytsfqxproject.http.RetrofitManager
 import kotlinx.android.synthetic.main.activity_forget.*
@@ -11,8 +12,11 @@ import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class ForgetActivity : BaseActivity(), View.OnClickListener {
+    private var pamrms = HashMap<String, Any>()
+
     override fun layoutId(): Int = R.layout.activity_forget
 
     override fun initView() {
@@ -26,7 +30,10 @@ class ForgetActivity : BaseActivity(), View.OnClickListener {
     override fun onClick(v: View) {
         when (v.id) {
             R.id.tv_getCode -> {
-                RetrofitManager.service.yanSmsCode(et_name.text.toString(), "find", et_code.text.toString()).enqueue(object : Callback<JsonObject> {
+                pamrms["phone"] = et_name.text.toString()
+                pamrms["type"] = "find"
+                pamrms["verify_code"] = et_code.text.toString()
+                RetrofitManager.service.yanSmsCode(Tools.getRequestBody(pamrms)).enqueue(object : Callback<JsonObject> {
                     override fun onFailure(call: Call<JsonObject>, t: Throwable) {
                         showToast(getString(R.string.http_error))
                     }
@@ -65,7 +72,12 @@ class ForgetActivity : BaseActivity(), View.OnClickListener {
                     showToast("两次密码不一致")
                     return
                 }
-                RetrofitManager.service.findLoginPwd(et_name.text.toString(), et_code.text.toString(), et_pwd.text.toString(), et_pwd2.text.toString()).enqueue(object : Callback<JsonObject> {
+                pamrms.clear()
+                pamrms["phone"] = et_name.text.toString()
+                pamrms["sms_code"] = et_code.text.toString()
+                pamrms["pwd"] = et_pwd.text.toString()
+                pamrms["confirm_pwd"] = et_pwd2.text.toString()
+                RetrofitManager.service.findLoginPwd(Tools.getRequestBody(pamrms)).enqueue(object : Callback<JsonObject> {
                     override fun onFailure(call: Call<JsonObject>, t: Throwable) {
                         showToast(getString(R.string.http_error))
                     }

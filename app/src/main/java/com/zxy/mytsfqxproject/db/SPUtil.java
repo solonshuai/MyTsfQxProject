@@ -39,7 +39,7 @@ public class SPUtil {
 
     public static void clearData() {
         editor.clear();
-        editor.apply();
+        editor.commit();
     }
 
     public static void putData(String key, String value) {
