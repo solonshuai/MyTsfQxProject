@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class CommonRecycleAdapter<T extends BaseRecyclerItem> extends RecyclerView.Adapter<CommonViewHolder> {
+public abstract class CommonRecycleAdapter<T> extends RecyclerView.Adapter<CommonViewHolder> {
     protected LayoutInflater layoutInflater;
     protected OnRecyclerItemClickListener<T> mOnRecyclerItemClickListener;
     protected List<T> mData = new ArrayList<>();

@@ -11,20 +11,15 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
 import com.bumptech.glide.Glide
-import com.google.gson.Gson
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter
 import com.scwang.smartrefresh.layout.header.ClassicsHeader
-import com.youth.banner.BannerConfig
 import com.youth.banner.loader.ImageLoader
 import com.zxy.mytsfqxproject.R
 import com.zxy.mytsfqxproject.Utils.StatusBarUtil
 import com.zxy.mytsfqxproject.Utils.Tools
 import com.zxy.mytsfqxproject.View.GridDividerItemDecoration
-import com.zxy.mytsfqxproject.activity.DDJSActivity
-import com.zxy.mytsfqxproject.activity.FWDDActivity
-import com.zxy.mytsfqxproject.activity.GCGLActivity
-import com.zxy.mytsfqxproject.activity.JDKDActivity
+import com.zxy.mytsfqxproject.activity.*
 import com.zxy.mytsfqxproject.adapter.MenuAdapter
 import com.zxy.mytsfqxproject.base.BaseFragment
 import com.zxy.mytsfqxproject.http.RetrofitManager
@@ -32,7 +27,6 @@ import com.zxy.mytsfqxproject.mvp.entity.MenuBean
 import com.zxy.mytsfqxproject.recyclerView.OnRecyclerItemClickListener
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.top_view.*
-import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -104,7 +98,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener, OnRecyclerItemClickLi
     override fun onClick(v: View) {
         when (v.id) {
             R.id.iv_left -> {
-
+                startActivity(Intent(activity, CustomerManager::class.java))
             }
             R.id.iv_right -> {
 

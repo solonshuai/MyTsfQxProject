@@ -55,7 +55,15 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.ChooseCustomerActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.CustomerEditorActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CustomerManager"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
     </application>
 
 </manifest>

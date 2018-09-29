@@ -2,12 +2,14 @@ package com.zxy.mytsfqxproject.activity
 
 import android.annotation.SuppressLint
 import android.app.ProgressDialog
+import android.content.Intent
 import android.os.Build
 import android.support.annotation.RequiresApi
 import android.text.TextUtils
 import android.view.View
 import android.widget.RadioGroup
 import com.zxy.mytsfqxproject.R
+import com.zxy.mytsfqxproject.Utils.StatusBarUtil
 import com.zxy.mytsfqxproject.Utils.Tools
 import com.zxy.mytsfqxproject.View.ShowWheelView
 import com.zxy.mytsfqxproject.View.ShowWheelViewTime
@@ -53,6 +55,8 @@ class JDKDActivity : BaseActivity(), View.OnClickListener, RadioGroup.OnCheckedC
         rg_choose.setOnCheckedChangeListener(this)
         rg_songxiuren.setOnCheckedChangeListener(this)
         et_chepai_num.onFocusChangeListener = this
+        this.let { StatusBarUtil.darkMode(it) }
+        this.let { StatusBarUtil.setPaddingSmart(it, top_view) }
     }
 
     override fun onClick(v: View) {
@@ -67,7 +71,8 @@ class JDKDActivity : BaseActivity(), View.OnClickListener, RadioGroup.OnCheckedC
 
             }
             R.id.iv_phone_scanning -> {
-
+                val intent = Intent(this, ChooseCustomerActivity::class.java)
+                startActivityForResult(intent, 100)
             }
             R.id.tv_youbiao -> {
                 ShowWheelView.show(this, youBiaoList) { tv_youbiao.text = it }
@@ -150,4 +155,13 @@ class JDKDActivity : BaseActivity(), View.OnClickListener, RadioGroup.OnCheckedC
         mJdkDPresenter.detachView()
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+        super.onActivityResult(requestCode, resultCode, data)
+        when (resultCode) {
+            100 -> {
+                val datas = data.getStringExtra("customer_phone")
+                et_phone.setText(datas)
+            }
+        }
+    }
 }
