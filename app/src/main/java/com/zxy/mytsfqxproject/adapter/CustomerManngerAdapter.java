@@ -10,11 +10,11 @@ import com.zxy.mytsfqxproject.recyclerView.CommonViewHolder;
 
 import java.util.List;
 
-public class ChooseCustomerAdapter extends CommonRecycleAdapter<ChooseCustomer.ResultBean.DataBean> {
+public class CustomerManngerAdapter extends CommonRecycleAdapter<ChooseCustomer.ResultBean.DataBean> {
     private Context mContext;
 
-    public ChooseCustomerAdapter(Context context) {
-        super(context, R.layout.adapter_customer_manager);
+    public CustomerManngerAdapter(Context context) {
+        super(context, R.layout.item_choose_customer);
         this.mContext = context;
     }
 
@@ -32,12 +32,10 @@ public class ChooseCustomerAdapter extends CommonRecycleAdapter<ChooseCustomer.R
     public void bindData(CommonViewHolder holder, ChooseCustomer.ResultBean.DataBean item) {
         holder.setText(R.id.tv_name, item.getUsername());
         holder.setText(R.id.tv_phone, item.getPhone());
-        if (item.getClient_grade() == 10) {
-            holder.setText(R.id.tv_level, "A级");
-        } else if (item.getClient_grade() == 20) {
-            holder.setText(R.id.tv_level, "B级");
-        } else if (item.getClient_grade() == 30) {
-            holder.setText(R.id.tv_level, "C级");
+        if (item.getSex().equals("男")) {
+            ((ImageView) holder.getView(R.id.iv_nan)).setImageResource(R.mipmap.img_nan);
+        } else {
+            ((ImageView) holder.getView(R.id.iv_nan)).setImageResource(R.mipmap.img_nv);
         }
 
     }

@@ -1,7 +1,5 @@
 package com.zxy.mytsfqxproject.mvp.entity;
 
-import com.zxy.mytsfqxproject.recyclerView.BaseRecyclerItem;
-
 import java.util.List;
 
 public class MenuBean {
@@ -40,7 +38,7 @@ public class MenuBean {
         this.result = result;
     }
 
-    public static class ResultBean implements BaseRecyclerItem {
+    public static class ResultBean {
         /**
          * alias : JDKD
          * id : 1
@@ -83,16 +81,6 @@ public class MenuBean {
 
         public void setImgurl(String imgurl) {
             this.imgurl = imgurl;
-        }
-
-        @Override
-        public int getViewType() {
-            return 0;
-        }
-
-        @Override
-        public long getItemId() {
-            return 0;
         }
     }
 }

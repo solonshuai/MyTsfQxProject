@@ -32,7 +32,6 @@
                     android:layout_marginStart="10dp"
                     android:gravity="center"
                     android:text="车牌号码"
-                    android:textColor="@color/color_black"
                     android:textSize="@dimen/album_sp_16" />
 
                 <ImageView
@@ -55,7 +54,8 @@
                         android:layout_weight="1"
                         android:background="@drawable/shape_gary_radius"
                         android:hint="请输入车牌号码"
-                        android:padding="2dp" />
+                        android:padding="2dp"
+                        android:textSize="@dimen/album_sp_14" />
 
                     <ImageView
                         android:id="@+id/iv_chepai_scanning"
@@ -79,7 +79,6 @@
                     android:layout_marginStart="10dp"
                     android:gravity="center"
                     android:text="车架号码"
-                    android:textColor="@color/color_black"
                     android:textSize="@dimen/album_sp_16" />
 
                 <ImageView
@@ -102,7 +101,8 @@
                         android:layout_weight="1"
                         android:background="@drawable/shape_gary_radius"
                         android:hint="请输入车架号码"
-                        android:padding="2dp" />
+                        android:padding="2dp"
+                        android:textSize="@dimen/album_sp_14" />
 
                     <ImageView
                         android:id="@+id/iv_chejia_scanning"
@@ -126,7 +126,6 @@
                     android:layout_marginStart="10dp"
                     android:gravity="center"
                     android:text="车型品牌"
-                    android:textColor="@color/color_black"
                     android:textSize="@dimen/album_sp_16" />
 
                 <ImageView
@@ -176,7 +175,6 @@
                     android:layout_marginStart="10dp"
                     android:gravity="center"
                     android:text="客户名称"
-                    android:textColor="@color/color_black"
                     android:textSize="@dimen/album_sp_16" />
 
                 <ImageView
@@ -199,7 +197,8 @@
                         android:layout_weight="1"
                         android:background="@drawable/shape_gary_radius"
                         android:hint="请输入姓名"
-                        android:padding="2dp" />
+                        android:padding="2dp"
+                        android:textSize="@dimen/album_sp_14" />
 
                     <RadioGroup
                         android:id="@+id/rg_choose"
@@ -236,7 +235,6 @@
                     android:layout_marginStart="10dp"
                     android:gravity="center"
                     android:text="手机号码"
-                    android:textColor="@color/color_black"
                     android:textSize="@dimen/album_sp_16" />
 
                 <ImageView
@@ -259,7 +257,8 @@
                         android:layout_weight="1"
                         android:background="@drawable/shape_gary_radius"
                         android:hint="请输入手机号码"
-                        android:padding="2dp" />
+                        android:padding="2dp"
+                        android:textSize="@dimen/album_sp_14" />
 
                     <ImageView
                         android:id="@+id/iv_phone_scanning"
@@ -283,7 +282,6 @@
                     android:layout_marginStart="10dp"
                     android:gravity="center"
                     android:text="服务卡"
-                    android:textColor="@color/color_black"
                     android:textSize="@dimen/album_sp_16" />
 
                 <TextView
@@ -314,7 +312,6 @@
                     android:layout_marginStart="10dp"
                     android:gravity="center"
                     android:text="送修人"
-                    android:textColor="@color/color_black"
                     android:textSize="@dimen/album_sp_16" />
 
                 <LinearLayout
@@ -331,7 +328,8 @@
                         android:layout_weight="1"
                         android:background="@drawable/shape_gary_radius"
                         android:hint="请输入姓名"
-                        android:padding="2dp" />
+                        android:padding="2dp"
+                        android:textSize="@dimen/album_sp_14" />
 
                     <RadioGroup
                         android:id="@+id/rg_songxiuren"
@@ -368,7 +366,6 @@
                     android:layout_marginStart="10dp"
                     android:gravity="center"
                     android:text="手机号"
-                    android:textColor="@color/color_black"
                     android:textSize="@dimen/album_sp_16" />
 
 
@@ -380,7 +377,8 @@
                     android:layout_marginStart="15dp"
                     android:background="@drawable/shape_gary_radius"
                     android:hint="请输入手机号码"
-                    android:padding="2dp" />
+                    android:padding="2dp"
+                    android:textSize="@dimen/album_sp_14" />
 
             </LinearLayout>
 
@@ -404,7 +402,6 @@
                         android:layout_marginStart="10dp"
                         android:gravity="center"
                         android:text="进店油表"
-                        android:textColor="@color/color_black"
                         android:textSize="@dimen/album_sp_16" />
 
                     <RelativeLayout
@@ -446,7 +443,6 @@
                         android:layout_marginStart="10dp"
                         android:gravity="center"
                         android:text="进店里程"
-                        android:textColor="@color/color_black"
                         android:textSize="@dimen/album_sp_16" />
 
                     <RelativeLayout
@@ -462,7 +458,8 @@
                             android:layout_height="match_parent"
                             android:background="@null"
                             android:maxLength="10"
-                            android:padding="2dp" />
+                            android:padding="2dp"
+                            android:textSize="@dimen/album_sp_14" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -495,7 +492,6 @@
                         android:layout_marginStart="10dp"
                         android:gravity="center"
                         android:text="预计交车"
-                        android:textColor="@color/color_black"
                         android:textSize="@dimen/album_sp_16" />
 
                     <RelativeLayout
@@ -531,7 +527,6 @@
                     android:layout_marginStart="10dp"
                     android:gravity="center"
                     android:text="快捷设置"
-                    android:textColor="@color/color_black"
                     android:textSize="@dimen/album_sp_16" />
             </LinearLayout>
 
@@ -547,7 +542,6 @@
                     android:layout_marginStart="10dp"
                     android:gravity="center"
                     android:text="故障描述"
-                    android:textColor="@color/color_black"
                     android:textSize="@dimen/album_sp_16" />
 
                 <EditText
@@ -556,7 +550,8 @@
                     android:layout_marginStart="15dp"
                     android:layout_toEndOf="@+id/tv_guzhang_title"
                     android:background="@drawable/shape_gary_radius"
-                    android:hint="请输入车辆简要故障" />
+                    android:hint="请输入车辆简要故障"
+                    android:textSize="@dimen/album_sp_14" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -571,7 +566,6 @@
                     android:layout_marginStart="10dp"
                     android:gravity="center"
                     android:text="车主嘱咐"
-                    android:textColor="@color/color_black"
                     android:textSize="@dimen/album_sp_16" />
 
                 <EditText
@@ -581,7 +575,8 @@
                     android:layout_marginStart="15dp"
                     android:layout_toEndOf="@+id/tv_chezhu"
                     android:background="@drawable/shape_gary_radius"
-                    android:hint="请输入备注信息" />
+                    android:hint="请输入备注信息"
+                    android:textSize="@dimen/album_sp_14" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -596,7 +591,6 @@
                     android:layout_marginStart="10dp"
                     android:gravity="center"
                     android:text="服务项目"
-                    android:textColor="@color/color_black"
                     android:textSize="@dimen/album_sp_16" />
 
                 <RelativeLayout
@@ -637,7 +631,6 @@
                     android:layout_marginStart="10dp"
                     android:gravity="center"
                     android:text="配件材料"
-                    android:textColor="@color/color_black"
                     android:textSize="@dimen/album_sp_16" />
 
                 <RelativeLayout

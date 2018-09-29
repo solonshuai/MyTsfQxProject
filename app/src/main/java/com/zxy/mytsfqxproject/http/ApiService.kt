@@ -2,6 +2,7 @@ package com.zxy.mytsfqxproject.http
 
 import com.google.gson.JsonObject
 import com.zxy.mytsfqxproject.mvp.entity.CarDetailBean
+import com.zxy.mytsfqxproject.mvp.entity.ChooseCustomer
 import com.zxy.mytsfqxproject.mvp.entity.MenuBean
 import com.zxy.mytsfqxproject.mvp.entity.UserBean
 import io.reactivex.Observable
@@ -26,4 +27,17 @@ interface ApiService {
     //获取当前车牌的所有信息
     @POST("Communal/getClientDetail")
     fun getClientDetail(@Body route: RequestBody): Observable<CarDetailBean>
+
+    //获取客户列表
+    @POST("Client/applists")
+    fun getChooseCustomer(@Body route: RequestBody): Call<ChooseCustomer>
+
+    @POST("Client/addClient")
+    fun addClient(@Body route: RequestBody): Call<JsonObject>
+
+    @POST("Client/editClient")
+    fun editClient(@Body route: RequestBody): Call<JsonObject>
+
+    @POST("Client/applists")//客户管理
+    fun applists(@Body route: RequestBody): Call<ChooseCustomer>
 }
